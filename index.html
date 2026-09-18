@@ -1,19 +1,18 @@
+"J'ai bien reçu ton message 🤖. La connexion à une vraie IA sera ajoutée ensuite.";
+    messages.appendChild(aiMessage);
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aïcha IA</title>
-<style>
-body{font-family:Arial;text-align:center;background:#070b1d;color:white;padding:40px}
-button{padding:15px 25px;border:0;border-radius:15px;background:#711cff;color:white;font-size:18px}
-</style>
-</head>
-<body>
-<h1>🤖 Aïcha IA</h1>
-<h2>Bienvenue ! 👋</h2>
-<p>Ton assistant intelligent est prêt.</p>
-<button onclick="alert('Bonjour ! Je suis Aïcha IA 🤖')">Commencer</button>
+    messages.scrollTop = messages.scrollHeight;
+  }, 500);
+
+  messages.scrollTop = messages.scrollHeight;
+}
+
+document.getElementById("input").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    sendMessage();
+  }
+});
+</script>
+
 </body>
 </html>
