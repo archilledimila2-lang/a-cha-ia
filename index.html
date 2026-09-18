@@ -1,17 +1,73 @@
-"J'ai bien reçu ton message 🤖. La connexion à une vraie IA sera ajoutée ensuite.";
-    messages.appendChild(aiMessage);
+area{
+display:flex;
+gap:8px;
+margin-top:15px;
+}
+input{
+flex:1;
+min-width:0;
+padding:15px;
+border:none;
+border-radius:12px;
+font-size:16px;
+outline:none;
+}
+button{
+padding:14px 18px;
+border:none;
+border-radius:12px;
+background:#6c25e8;
+color:white;
+font-size:16px;
+font-weight:bold;
+}
+</style>
+</head>
+<div class="chat" id="messages">
 
-    messages.scrollTop = messages.scrollHeight;
-  }, 500);
+<div class="message ai">
+Bonjour 👋 Je suis Aïcha IA. Comment puis-je t'aider ?
+</div>
 
-  messages.scrollTop = messages.scrollHeight;
+</div>
+
+<div class="input-area">
+
+<input
+id="input"
+type="text"
+placeholder="Écris ton message..."
+>
+
+<button onclick="sendMessage()">
+Envoyer
+</button>
+
+</div>
+
+</div>
+HTML
+</head>
+et colle PARTIE 2 :
+HTMLmessages.scrollHeight;
+
+}, 500);
+
+messages.scrollTop = messages.scrollHeight;
+
 }
 
-document.getElementById("input").addEventListener("keydown", function(event) {
-  if (event.key === "Enter") {
-    sendMessage();
-  }
-});
+document.getElementById("input").addEventListener(
+"keydown",
+function(event) {
+
+if (event.key === "Enter") {
+sendMessage();
+}
+
+}
+);
+
 </script>
 
 </body>
