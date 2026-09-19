@@ -1,74 +1,61 @@
-area{
-display:flex;
-gap:8px;
-margin-top:15px;
-}
-input{
-flex:1;
-min-width:0;
-padding:15px;
-border:none;
-border-radius:12px;
-font-size:16px;
-outline:none;
-}
-button{
-padding:14px 18px;
-border:none;
-border-radius:12px;
-background:#6c25e8;
-color:white;
-font-size:16px;
-font-weight:bold;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aïcha IA</title>
+<style>
+body{margin:0;background:#080b1c;color:white;font-family:Arial}
+main{max-width:500px;margin:auto;padding:25px}
+h1{text-align:center}
+#chat{height:60vh;background:#151a35;padding:15px;border-radius:15px;overflow:auto}
+.msg{padding:10px;margin:8px 0;border-radius:12px;background:#293052}
+.user{background:#6525d9;text-align:right}
+form{display:flex;gap:8px;margin-top:12px}
+input{flex:1;padding:14px;border:0;border-radius:10px;font-size:16px}
+button{padding:14px;border:0;border-radius:10px;background:#7135e8;color:white;font-weight:bold}
 </style>
 </head>
-<div class="chat" id="messages">
+<body>
+<main>
+<h1>🤖 Aïcha IA</h1>
 
-<div class="message ai">
-Bonjour 👋 Je suis Aïcha IA. Comment puis-je t'aider ?
+<div id="chat">
+<div class="msg">👋 Bonjour ! Je suis Aïcha IA.</div>
 </div>
 
-</div>
+<form id="form">
+<input id="input" placeholder="Écris ton message..." autocomplete="off">
+<button>Envoyer</button>
+</form>
+</main>
 
-<div class="input-area">
+<script>
+const form=document.getElementById("form");
+const input=document.getElementById("input");
+const chat=document.getElementById("chat");
 
-<input
-id="input"
-type="text"
-placeholder="Écris ton message..."
->
+form.addEventListener("submit",function(e){
+e.preventDefault();
 
-<button onclick="sendMessage()">
-Envoyer
-</button>
+const text=input.value.trim();
+if(!text)return;
 
-</div>
+const user=document.createElement("div");
+user.className="msg user";
+user.textContent="👤 "+text;
+chat.appendChild(user);
 
-</div>
-HTML
-</head>
-et colle PARTIE 2 :
-HTMLmessages.scrollHeight;
+input.value="";
 
-}, 500);
-
-messages.scrollTop = messages.scrollHeight;
-
-}
-
-document.getElementById("input").addEventListener(
-"keydown",
-function(event) {
-
-if (event.key === "Enter") {
-sendMessage();
-}
-
-}
-);
-
+setTimeout(function(){
+const ai=document.createElement("div");
+ai.className="msg";
+ai.textContent="🤖 Aïcha IA : J'ai bien reçu ton message !";
+chat.appendChild(ai);
+chat.scrollTop=chat.scrollHeight;
+},500);
+});
 </script>
-
 </body>
-</html>
+  </html>
